@@ -13,8 +13,8 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin: 'https://treatsdelight.vercel.app', 
-  // origin: ['http://localhost:3000','http://localhost:3001','https://treatsdelight.vercel.app'], 
+  // origin: 'https://treatsdelight.vercel.app', 
+  origin: ['http://localhost:3000','http://localhost:3001','https://treatsdelight.vercel.app'], 
   credentials: true
 }));
 
