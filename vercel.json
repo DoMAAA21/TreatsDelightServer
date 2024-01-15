@@ -19,7 +19,8 @@
         "OPTIONS"
       ],
       "headers": {
-        "Access-Control-Allow-Origin": true
+        "Access-Control-Allow-Origin": "https://treatsdelight.vercel.app",
+        "Access-Control-Allow-Credentials": "true"
       }
     }
   ]
