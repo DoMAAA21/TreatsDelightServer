@@ -20,11 +20,10 @@
       ],
       "headers": {
         "Access-Control-Allow-Origin": "https://treatsdelight.vercel.app",
-        "Access-Control-Allow-Credentials": "true"
-      },
-      "options": {
-        "timeout": 100
+        "Access-Control-Allow-Credentials": "true",
+        "Timeout": "60s"  
       }
+      
     }
   ]
 }
