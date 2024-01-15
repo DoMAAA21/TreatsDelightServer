@@ -11,23 +11,8 @@
       {
         "src": "/(.*)",
         "dest": "server.js"
-       
-      
       }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "*" }
-        ]
-      },
-      {
-        "source": "/https://treatsdelight.vercel.app/(.*)",
-        "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "*" }
-        ]
-      }  
-  ]
+    ]
+    
     
   }
