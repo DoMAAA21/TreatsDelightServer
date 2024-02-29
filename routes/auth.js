@@ -5,6 +5,14 @@ const express = require("express");
 const router = express.Router();
 
 
+const {
+  isAuthenticatedUser,
+  authorizeRoles,
+} = require("../middlewares/auth");
+
+
+
+
 
 
 const {
@@ -24,15 +32,15 @@ const {
 router.post("/verify-token", verifyToken);
 router
   .route("/admin/users")
-  .get( allUsers);
-router.get("/admin/owners", allOwners);
+  .get(isAuthenticatedUser, authorizeRoles('Admin', 'Employee', 'Owner'), allUsers);
+router.get("/admin/owners",isAuthenticatedUser, authorizeRoles('Admin'), allOwners);
 
 
-router.post("/admin/user/new", upload.single("avatar"), newUser);
+router.post("/admin/user/new", isAuthenticatedUser, authorizeRoles('Admin', 'Employee'), upload.single("avatar"), newUser);
 router.route('/admin/user/:id')
-  .get( getUserDetails)
-  .put(updateUser)
-  .delete(deleteUser);
+  .get(isAuthenticatedUser, authorizeRoles('Admin', 'Employee'), getUserDetails)
+  .put(isAuthenticatedUser, authorizeRoles('Admin', 'Employee'), upload.single("avatar"), updateUser)
+  .delete(isAuthenticatedUser, authorizeRoles('Admin', 'Employee'), deleteUser);
 
 router.route('/edit-profile/:id')
   .put(upload.single("avatar"), updateProfile);

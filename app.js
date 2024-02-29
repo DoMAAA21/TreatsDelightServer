@@ -7,14 +7,18 @@ const product = require("./routes/product");
 const employee = require("./routes/employee");
 const order = require("./routes/order");
 const chart = require("./routes/chart");
+const rent = require("./routes/rent");
+const water = require("./routes/water");
+const electricity = require("./routes/electricity");
+const maintenance = require("./routes/maintenance");
 
 
 const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  // origin: 'https://treatsdelight.vercel.app', 
-  origin: ['http://localhost:3000','https://treatsdelight.vercel.app','https://treats-delight.onrender.com'], 
+  // origin: 'http://localhost:3000', 
+  origin: ['http://localhost:3000','http://localhost:3001'], 
   credentials: true
 }));
 
@@ -27,6 +31,10 @@ app.use("/api/v1", product);
 app.use("/api/v1", employee);
 app.use("/api/v1", order);
 app.use("/api/v1", chart);
+app.use("/api/v1", rent);
+app.use("/api/v1", water);
+app.use("/api/v1", electricity);
+app.use("/api/v1", maintenance);
 
 app.use(errorMiddleware);
 

@@ -83,6 +83,11 @@ const productSchema = new mongoose.Schema({
     default: false,
     required: true,
   },
+  halal:{
+    type: Boolean,
+    default: true,
+    required: true,
+  },
   nutrition: {
     calories: {
       type: Number,
@@ -99,6 +104,11 @@ const productSchema = new mongoose.Schema({
       default: 0,
       required: true,
     },
+    fat: {
+      type: Number,
+      default: 0,
+      required: true,
+    },
     fiber: {
       type: Number,
       default: 0,
@@ -110,6 +120,11 @@ const productSchema = new mongoose.Schema({
       required: true,
     },
     sodium: {
+      type: Number,
+      default: 0,
+      required: true,
+    },
+    cholesterol: {
       type: Number,
       default: 0,
       required: true,
