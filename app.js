@@ -17,8 +17,8 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin: 'https://treatsdelight.vercel.app', 
-  // origin: ['http://localhost:3000','http://localhost:3001'], 
+  // origin: 'https://treatsdelight.vercel.app', 
+  origin: ['http://localhost:3000','http://localhost:3001', 'https://treatsdelight.vercel.app', 'https://treats-delight.onrender.com'], 
   credentials: true
 }));
 
