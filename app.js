@@ -21,6 +21,7 @@ app.use(cors({
   origin: ['http://localhost:3000','http://localhost:3001', 'https://treatsdelight.vercel.app', 'https://treats-delight.onrender.com','https://1128tupt.vercel.app'], 
   credentials: true
 }));
+//new env
 
 app.use(express.json());
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
